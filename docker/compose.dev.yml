@@ -58,5 +58,22 @@ services:
         sleep 5;
       done; /usr/bin/mc mb myrustfs/downloads; /usr/bin/mc anonymous set public myrustfs/downloads; exit 0; "
 
+  frontend:
+    build:
+      context: ../frontend
+      dockerfile: Dockerfile
+    ports:
+      - "5173:5173"
+    volumes:
+      - ../frontend:/app
+      - /app/node_modules
+    environment:
+      - VITE_API_URL=http://localhost:3000
+      - VITE_JAEGER_URL=http://localhost:16686
+      - VITE_SENTRY_DSN=${SENTRY_DSN:-}
+    depends_on:
+      - delineate-app
+      - delineate-jaeger
+
 volumes:
   rustfs_data:
