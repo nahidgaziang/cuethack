@@ -1,4 +1,26 @@
-# Delineate Hackathon Challenge - CUET Fest 2025
+# Delineate Hackathon Challenge for Node.js
+
+[![CI](https://github.com/nahidgaziang/cuethack/actions/workflows/ci.yml/badge.svg)](https://github.com/nahidgaziang/cuethack/actions/workflows/ci.yml)
+
+Welcome to the Delineate Hackathon Challenge! This is a hypothetical scenario designed to test your skills in **System Design**, **Infrastructure**, **CI/CD**, and **Performance Optimization**.
+
+## CI/CD Pipeline
+
+This project uses GitHub Actions for Continuous Integration. The pipeline includes:
+*   **Linting**: ESLint and Prettier checks.
+*   **Testing**: Full E2E test suite running against a real S3-compatible service (RustFS).
+*   **Security**: Vulnerability scanning using Trivy.
+*   **Build**: Docker image build and caching.
+
+### Running Tests Locally
+To run the E2E tests locally:
+```bash
+# 1. Start the development environment
+npm run docker:dev
+
+# 2. Run the tests inside the container (recommended)
+docker exec delineate-delineate-app-1 npm run test:e2e
+```
 
 ## The Scenario
 
