@@ -7,13 +7,16 @@ Welcome to the Delineate Hackathon Challenge! This is a hypothetical scenario de
 ## CI/CD Pipeline
 
 This project uses GitHub Actions for Continuous Integration. The pipeline includes:
-*   **Linting**: ESLint and Prettier checks.
-*   **Testing**: Full E2E test suite running against a real S3-compatible service (RustFS).
-*   **Security**: Vulnerability scanning using Trivy.
-*   **Build**: Docker image build and caching.
+
+- **Linting**: ESLint and Prettier checks.
+- **Testing**: Full E2E test suite running against a real S3-compatible service (RustFS).
+- **Security**: Vulnerability scanning using Trivy.
+- **Build**: Docker image build and caching.
 
 ### Running Tests Locally
+
 To run the E2E tests locally:
+
 ```bash
 # 1. Start the development environment
 npm run docker:dev
